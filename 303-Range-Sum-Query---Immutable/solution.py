@@ -5,6 +5,10 @@ class NumArray(object):
         :type nums: List[int]
         """
         self.nums = nums
+        self.sum = {}
+        self.sum[0, 0] = nums[0]
+        for i in range(1, len(nums)):
+            self.sum[0, i] = self.sum[0, i-1] + self.nums[i]
 
     def sumRange(self, i, j):
         """
@@ -13,10 +17,8 @@ class NumArray(object):
         :type j: int
         :rtype: int
         """
-        result = 0
-        for k in range(i, j+1):
-            result += self.nums[k]
-        return result
+
+        return self.sum[0, j] - self.sum[0, i]
 
 
 # Your NumArray object will be instantiated and called as such:
