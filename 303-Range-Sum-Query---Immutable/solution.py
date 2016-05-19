@@ -6,8 +6,8 @@ class NumArray(object):
         """
         self.nums = nums
         self.sum = {}
-        self.sum[0, 0] = nums[0]
-        for i in range(1, len(nums)):
+        self.sum[0, 0] = self.nums[0]
+        for i in range(1, len(self.nums)):
             self.sum[0, i] = self.sum[0, i-1] + self.nums[i]
 
     def sumRange(self, i, j):
