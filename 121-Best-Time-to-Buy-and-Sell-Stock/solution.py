@@ -10,7 +10,7 @@ class Solution(object):
             current = prices[i]
             min_stock = min(min_history, current)
             new = current - min_stock
-            max_result = max(maxProfit(prices[0:i],new))
+            max_result = max(self.maxProfit(prices[0:i]), new)
         
         return max_result
             
