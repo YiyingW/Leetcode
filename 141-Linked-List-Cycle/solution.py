@@ -6,8 +6,6 @@ class ListNode(object):
 
 class Solution(object):
 	def hasCycle(self, head):
-		if head == None:
-			return False
 		p, q = head, head
 		while p and q: # q and q are both not None
 			if p.next:
