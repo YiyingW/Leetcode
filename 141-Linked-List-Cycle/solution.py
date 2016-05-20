@@ -8,14 +8,14 @@ class ListNode(object):
 
 class Solution(object):
 	def hasCycle(self, head):
-		store = {}
+		store=[]
 		if head == None or head.next == None:
 			return False
 		else:
 			currentNode = head
 			while (currentNode.next != None):
-				store[currentNode] = 1
+				store.append(currentNode)
 				currentNode = currentNode.next
-				if currentNode in store.keys():
+				if currentNode in store:
 					return True
 			return False
