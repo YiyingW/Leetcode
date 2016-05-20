@@ -3,19 +3,21 @@ class ListNode(object):
 	def __init__(self, x):
 		self.val = x
 		self.next = None
-	def __hash__(self):
-	    return hash(self.val)
 
 class Solution(object):
 	def hasCycle(self, head):
-		store=[]
-		if head == None or head.next == None:
+		if head == None:
 			return False
-		else:
-			currentNode = head
-			while (currentNode.next != None):
-				store.append(currentNode)
-				currentNode = currentNode.next
-				if currentNode in store:
-					return True
-			return False
+		p, q = head, head
+		while p and q: # q and q are both not None
+			if p.next:
+				p = p.next
+			else:
+				break
+			if q.next and q.next.next:
+				q = q.next.next
+			else:
+				break
+			if p == q:
+				return True
+		return False
