@@ -12,7 +12,7 @@ class Solution(object):
 		else:
 			currentNode = head
 			while (currentNode.next != None):
-				store[currentNode] = 1
+				store[currentNode.val] = 1
 				currentNode = currentNode.next
 				if currentNode in store.keys():
 					return True
