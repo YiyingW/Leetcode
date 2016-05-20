@@ -12,11 +12,14 @@ class Solution(object):
         """
         currentNode = head
         previousNode = None
-        while (currentNode.next != None):
-            nextNode = currentNode.next
-            currentNode.next = previousNode
-            previousNode = currentNode
-            currentNode = nextNode
+        if currentNode == None:
+            return None
+        else:
+            while (currentNode.next != None):
+                nextNode = currentNode.next
+                currentNode.next = previousNode
+                previousNode = currentNode
+                currentNode = nextNode
 
-        currentNode.next = previousNode
+            currentNode.next = previousNode
         return currentNode
