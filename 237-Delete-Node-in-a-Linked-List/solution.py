@@ -19,6 +19,7 @@ class Solution(object):
                 currNode = nextNode
             else:
                 preNode.next = None
+                break
 
         return None
         
