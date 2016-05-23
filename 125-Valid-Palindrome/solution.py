@@ -12,12 +12,15 @@ class Solution(object):
         return True
         
     def simplifyString(self, s):
-        new = ''
+        new = []
         for letter in s:
             if ord(letter)>=ord('a') and ord(letter)<=ord('z'):
-                new+=letter
+                new.append(letter)
             elif ord(letter)>=ord('A') and ord(letter)<=ord('Z'):
                 chara = chr(ord('a')+ord(letter)-ord('A'))
-                new+=chara
-        return new
+                new.append(chara)
+        newstring=''
+        for i in range(0, len(new)):
+            newstring += new[i]
+        return newstring
         
