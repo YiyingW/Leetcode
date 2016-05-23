@@ -19,8 +19,9 @@ class Solution(object):
             elif ord(letter)>=ord('A') and ord(letter)<=ord('Z'):
                 chara = chr(ord('a')+ord(letter)-ord('A'))
                 new.append(chara)
-        newstring=''
-        for i in range(0, len(new)):
-            newstring += new[i]
+            elif ord(letter)>=ord('0') and ord(letter)<=ord('9'):
+                new.append(letter)
+        newstring=''.join(new)
+
         return newstring
         
