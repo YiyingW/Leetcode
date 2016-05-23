@@ -4,5 +4,12 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        sign = x/abs(x)
-        return int(str(abs(x))[::-1])*sign
+        if x != 0:
+            sign = x/abs(x)
+            num = int(str(abs(x))[::-1])
+            if num >= 2**31:
+                return 0
+            else:
+                return sign*num
+        else:
+            return 0
