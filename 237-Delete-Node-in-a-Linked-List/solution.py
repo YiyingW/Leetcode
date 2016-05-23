@@ -11,10 +11,14 @@ class Solution(object):
         :rtype: void Do not return anything, modify node in-place instead.
         """
         currNode = node
-        while (currNode.next != None & currNode != None):
+        while (currNode!= None):
             nextNode = currNode.next
-            currNode.val = nextNode.val
-            currNode = nextNode
-        currNode = None
+            if nextNode != None:
+                currNode.val = nextNode.val
+                preNode = currNode
+                currNode = nextNode
+            else:
+                preNode.next = None
+
         return None
         
