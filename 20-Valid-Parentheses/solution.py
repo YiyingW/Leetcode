@@ -10,6 +10,7 @@ class Solution(object):
             if sambol == '(' or sambol == '[' or sambol == '{':
                 stack.append(sambol)
             else:
+                if len(stack)==0: return False
                 toppest = stack.pop()
                 if toppest not in match.keys(): return False
                 if match[toppest] != sambol:
