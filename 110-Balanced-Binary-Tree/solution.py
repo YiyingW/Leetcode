@@ -11,13 +11,22 @@ class Solution(object):
         :type root: TreeNode
         :rtype: bool
         """
-        if (root == None): return True
-        depthDiff = self.getHeight(root.left) - self.getHeight(root.right)
-        if (abs(depthDiff) > 1): return False
-        return self.isBalanced(root.left) & self.isBalanced(root.right)
+        return self.checkHeight(root) != -2
+
         
-        
-    def getHeight(self, root):
+    def checkHeight(self, root):
         if (root == None): return -1
-        return max(self.getHeight(root.left), self.getHeight(root.right))+1
+        
+        leftHeight = self.checkHeight(root.left)
+        if (leftHeight == -2): return -2
+        rightHeight = self.checkHeight(root.right)
+        if (rightHeight == -2): return -2
+        
+        heightDiff = leftHeight - rightHeight
+        if (abs(heightDiff)>1): return -2
+        
+        return max(leftHeight, rightHeight) + 1
+        
+        
+        
         
