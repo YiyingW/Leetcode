@@ -12,12 +12,12 @@ class Solution(object):
         :rtype: bool
         """
         if (root == None): return True
-        depthDiff = getHeight(root.left) - getHeight(root.right)
+        depthDiff = self.getHeight(root.left) - self.getHeight(root.right)
         if (abs(depthDiff) > 1): return False
-        return isBalanced(root.left) & isBalanced(root.right)
+        return self.isBalanced(root.left) & self.isBalanced(root.right)
         
         
-    def getHeight(root):
+    def getHeight(self, root):
         if (root == None): return -1
-        return max(getHeight(root.left), getHeight(root.right))+1
+        return max(self.getHeight(root.left), self.getHeight(root.right))+1
         
